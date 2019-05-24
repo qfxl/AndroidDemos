@@ -1,1 +1,1 @@
-include ':stickyItemDecoration'
+include ':stickyItemDecoration', ':cmake'
