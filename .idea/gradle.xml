@@ -9,8 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cmake" />
+            <option value="$PROJECT_DIR$/poi" />
             <option value="$PROJECT_DIR$/stickyItemDecoration" />
-            <option value="$PROJECT_DIR$/wxsendmsg" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,1 +1,1 @@
-include ':stickyItemDecoration', ':cmake', ':wxsendmsg'
+include ':stickyItemDecoration', ':cmake', ':poi'
