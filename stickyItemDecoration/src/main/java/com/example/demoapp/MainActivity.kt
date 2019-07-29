@@ -1,8 +1,8 @@
 package com.example.demoapp
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import android.text.TextUtils
 import org.json.JSONArray
 import org.json.JSONException
@@ -11,7 +11,7 @@ import java.nio.charset.Charset
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var cityRv: RecyclerView
+    lateinit var cityRv: androidx.recyclerview.widget.RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

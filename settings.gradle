@@ -1,1 +1,1 @@
-include ':stickyItemDecoration', ':cmake', ':poi'
+include ':stickyItemDecoration', ':cmake', ':poi', ':retrofit', ':fingerprint'

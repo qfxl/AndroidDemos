@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cmake" />
+            <option value="$PROJECT_DIR$/fingerprint" />
             <option value="$PROJECT_DIR$/poi" />
+            <option value="$PROJECT_DIR$/retrofit" />
             <option value="$PROJECT_DIR$/stickyItemDecoration" />
           </set>
         </option>

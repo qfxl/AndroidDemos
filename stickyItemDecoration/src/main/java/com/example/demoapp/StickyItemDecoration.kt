@@ -5,11 +5,11 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 
-class StickyItemDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
+class StickyItemDecoration(private val context: Context) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
     /**
      * 分割线颜色
      */
@@ -62,7 +62,7 @@ class StickyItemDecoration(private val context: Context) : RecyclerView.ItemDeco
      * @param parent RecyclerView this ItemDecoration is drawing into
      * @param state The current state of RecyclerView
      */
-    override fun onDraw(c: Canvas?, parent: RecyclerView, state: RecyclerView.State?) {
+    override fun onDraw(c: Canvas?, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
         super.onDraw(c, parent, state)
         val childCount = parent.childCount
         for (i in 0 until childCount) {
@@ -92,7 +92,7 @@ class StickyItemDecoration(private val context: Context) : RecyclerView.ItemDeco
      * @param parent RecyclerView this ItemDecoration is drawing into
      * @param state The current state of RecyclerView.
      */
-    override fun onDrawOver(c: Canvas?, parent: RecyclerView, state: RecyclerView.State?) {
+    override fun onDrawOver(c: Canvas?, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
         super.onDrawOver(c, parent, state)
         val childCount = parent.childCount
 
@@ -120,7 +120,7 @@ class StickyItemDecoration(private val context: Context) : RecyclerView.ItemDeco
      * @param parent  RecyclerView this ItemDecoration is decorating
      * @param state   The current state of RecyclerView.
      */
-    override fun getItemOffsets(outRect: Rect?, view: View, parent: RecyclerView, state: RecyclerView.State?) {
+    override fun getItemOffsets(outRect: Rect?, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
         super.getItemOffsets(outRect, view, parent, state)
         val position = parent.getChildAdapterPosition(view)
         if (isFirstItemInGroup(position)) {
