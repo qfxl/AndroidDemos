@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         object : BiometricPrompt.AuthenticationCallback() {
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
                 super.onAuthenticationError(errorCode, errString)
+                //没有任何指纹则会提示未注册任何指纹
                 toast("指纹验证失败 $errString")
             }
 

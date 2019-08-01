@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 
-class StickyItemDecoration(private val context: Context) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
+class StickyItemDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
     /**
      * 分割线颜色
      */
@@ -62,7 +62,7 @@ class StickyItemDecoration(private val context: Context) : androidx.recyclerview
      * @param parent RecyclerView this ItemDecoration is drawing into
      * @param state The current state of RecyclerView
      */
-    override fun onDraw(c: Canvas?, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
+    override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDraw(c, parent, state)
         val childCount = parent.childCount
         for (i in 0 until childCount) {
@@ -92,7 +92,7 @@ class StickyItemDecoration(private val context: Context) : androidx.recyclerview
      * @param parent RecyclerView this ItemDecoration is drawing into
      * @param state The current state of RecyclerView.
      */
-    override fun onDrawOver(c: Canvas?, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
+    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)
         val childCount = parent.childCount
 
@@ -120,13 +120,13 @@ class StickyItemDecoration(private val context: Context) : androidx.recyclerview
      * @param parent  RecyclerView this ItemDecoration is decorating
      * @param state   The current state of RecyclerView.
      */
-    override fun getItemOffsets(outRect: Rect?, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State?) {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         super.getItemOffsets(outRect, view, parent, state)
         val position = parent.getChildAdapterPosition(view)
         if (isFirstItemInGroup(position)) {
-            outRect?.top = stickyItemHeight
+            outRect.top = stickyItemHeight
         } else {
-            outRect?.top = dividerHeight
+            outRect.top = dividerHeight
         }
     }
 

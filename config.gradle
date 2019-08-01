@@ -1,0 +1,61 @@
+ext {
+    android = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 100,
+            versionName      : "1.0.0",
+    ]
+    libsVersion = [
+            supportLibrary_version = "1.0.2",
+            recyclerView_version = "1.0.0",
+            materia_version = "1.0.0",
+            constraint_layout_version = "1.1.3",
+            kotlin_version = "1.3.21",
+            multidex_version = "2.0.0",
+            junit_version = "4.12",
+            test_runner_version = "1.2.0",
+            espresso_core_version = "3.2.0",
+            vectordrawable_version = "1.0.1",
+            ktx_core_version = "1.0.2",
+            livedata_version = "2.0.0-rc01",
+            viewmodel_version = "2.0.0-rc01",
+            rxJava_version = "2.1.12",
+            rxAndroid_version = "2.0.2",
+            retrofit_version = "2.4.0",
+            logging_interceptor_version = "3.5.0",
+            adapter_rxjava2_version = "2.4.0",
+            converter_gson_version = "2.3.0",
+            gson_version = "2.8.0",
+            fragmentVersion = '1.1.0-alpha09',
+            navigationVersion = '2.0.0'
+    ]
+
+    dependencies = [
+            appcompat              : "androidx.appcompat:appcompat:$rootProject.supportLibrary_version",
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version",
+            material               : "com.google.android.material:material:$rootProject.materia_version",
+            recyclerView           : "androidx.recyclerview:recyclerview:$rootProject.recyclerView_version",
+            constraint_layout      : "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout_version",
+            multidex               : "androidx.multidex:multidex:$rootProject.multidex_version",
+            junit                  : "junit:junit:$rootProject.junit_version",
+            test_runner            : "androidx.test:runner:$rootProject.test_runner_version",
+            espresso               : "androidx.test.espresso:espresso-core:$rootProject.espresso_core_version",
+            vectordrawable         : "androidx.vectordrawable:vectordrawable:$rootProject.vectordrawable_version",
+            ktx_core               : "androidx.core:core-ktx:$rootProject.ktx_core_version",
+            liveData               : "androidx.lifecycle:lifecycle-livedata:$rootProject.livedata_version",
+            viewModel              : "androidx.lifecycle:lifecycle-viewmodel:$rootProject.viewmodel_version",
+            rxJava                 : "io.reactivex.rxjava2:rxjava:$rootProject.rxJava_version",
+            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid_version",
+            retrofit               : "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version",
+            gson                   : "com.google.code.gson:gson:$rootProject.gson_version",
+            converter_gson         : "com.squareup.retrofit2:converter-gson:$rootProject.converter_gson_version",
+            logging_interceptor    : "com.squareup.okhttp3:logging-interceptor:$rootProject.logging_interceptor_version",
+            adapter_rxjava2        : "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapter_rxjava2_version",
+            navigation_fragment_ktx: "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion",
+            navigation_ui_ktx      : "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion",
+            fragment_ktx           : "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+
+    ]
+
+}
