@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.github.fingerprint"
-        minSdkVersion rootProject.ext.android.minSdkVersion
+        minSdkVersion 19
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName

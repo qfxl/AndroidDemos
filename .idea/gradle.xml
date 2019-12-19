@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cmake" />
+            <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/databinding" />
             <option value="$PROJECT_DIR$/fingerprint" />
             <option value="$PROJECT_DIR$/poi" />
