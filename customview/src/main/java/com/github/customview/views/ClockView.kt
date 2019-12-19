@@ -38,7 +38,7 @@ class ClockView @JvmOverloads constructor(
         (height shr 1).toFloat()
     }
     private val textPaint by lazy {
-        Paint(Paint.DITHER_FLAG).apply {
+        Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG).apply {
             color = Color.WHITE
             textSize = spToPx(16f)
             textAlign = Paint.Align.CENTER
@@ -80,7 +80,7 @@ class ClockView @JvmOverloads constructor(
 
     private var mAnimator = ValueAnimator.ofFloat(0f, 6f).apply {
         interpolator = LinearInterpolator()
-        duration = 500
+        duration = 400
     }
 
     override fun onFinishInflate() {
