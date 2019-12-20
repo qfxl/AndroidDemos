@@ -162,7 +162,7 @@ class ClockView @JvmOverloads constructor(
 
     private val currentTimeRect by lazy {
         val hourBounds = Rect()
-        textPaint.getTextBounds("${hour}时", 0, "${hour}时".length, hourBounds)
+        textPaint.getTextBounds("00时", 0, "00时".length, hourBounds)
         RectF(
             hourX - dpToPx(5),
             centerY - hourBounds.height(),
