@@ -149,7 +149,7 @@ class ClockView @JvmOverloads constructor(
                 minutesDegree = md - value
             }
             if (seconds == 0 && minute == 0) {
-                hourDegree = hd - value * 60/24
+                hourDegree = hd - value * 60 / 24
             }
             secondsDegree = sd - value
             invalidate()
@@ -164,10 +164,10 @@ class ClockView @JvmOverloads constructor(
         val hourBounds = Rect()
         textPaint.getTextBounds("${hour}时", 0, "${hour}时".length, hourBounds)
         RectF(
-            hourX - textPaint.fontSpacing / 2,
-            centerY + hourBounds.top.toFloat() + textPaint.fontSpacing,
-            secondsX + textPaint.measureText("${seconds}秒") + textPaint.fontSpacing / 2,
-            centerY - hourBounds.bottom.toFloat() - textPaint.fontSpacing
+            hourX - dpToPx(5),
+            centerY - hourBounds.height(),
+            secondsX + textPaint.measureText("00秒") + dpToPx(5),
+            centerY + textPaint.descent()
         )
     }
 
@@ -175,17 +175,16 @@ class ClockView @JvmOverloads constructor(
         Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = Color.WHITE
             style = Paint.Style.STROKE
-            strokeWidth = dpToPx(1).toFloat()
+            strokeWidth = dpToPx(1)
         }
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
         val itemMaxWidth = width / 2 / 3
-        hourX = centerX + itemMaxWidth + textPaint.measureText("${seconds}秒")
+        hourX = centerX + itemMaxWidth + textPaint.measureText("00时")
         minuteX = centerX + itemMaxWidth * 2
-        secondsX = centerX + itemMaxWidth * 3 - textPaint.measureText("${seconds}秒")
-
+        secondsX = centerX + itemMaxWidth * 3 - textPaint.measureText("00秒")
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -199,7 +198,7 @@ class ClockView @JvmOverloads constructor(
         //绘制内圈秒
         drawSeconds(canvas)
         //绘制当前时间框
-        canvas?.drawRoundRect(currentTimeRect, 5f, 5f, boundsPaint)
+        canvas?.drawRoundRect(currentTimeRect, dpToPx(5), dpToPx(5), boundsPaint)
     }
 
     /**
@@ -213,7 +212,7 @@ class ClockView @JvmOverloads constructor(
             for (h in 0 until 24) {
                 save()
                 rotate(360 / 24f * h, centerX, centerY)
-                val hourText = if (h  < 10) {
+                val hourText = if (h < 10) {
                     "0${h}时"
                 } else {
                     "${h}时"
@@ -310,12 +309,8 @@ class ClockView @JvmOverloads constructor(
     /**
      * dp to px
      */
-    private fun dpToPx(dp: Int): Int {
+    private fun dpToPx(dp: Int): Float {
         val displayMetrics = this.resources.displayMetrics
-        return if (dp < 0) dp else (dp * displayMetrics.density).roundToInt()
+        return if (dp < 0) dp.toFloat() else dp * displayMetrics.density
     }
-}
-
-fun String.log() {
-    Log.i("qfxl", this)
 }
