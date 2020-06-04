@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cmake" />
             <option value="$PROJECT_DIR$/customview" />
+            <option value="$PROJECT_DIR$/dark" />
             <option value="$PROJECT_DIR$/databinding" />
             <option value="$PROJECT_DIR$/fingerprint" />
             <option value="$PROJECT_DIR$/poi" />
@@ -18,6 +19,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
